@@ -49,8 +49,8 @@ public class AppViewController: ScrollViewController {
   private let viewStore: App.ViewStore
   
   private let mainViewController: MainViewController
-  
-  init(store: App.Store) {
+
+    public init(store: App.Store) {
     self.store = store
     self.viewStore = ViewStore(store)
     let cameraViewController = CameraViewController(store: store.scope(state: \.capture, action: App.Action.capture))

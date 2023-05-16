@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DazeImage" representedClassName="DazeImage" syncable="YES">
+        <attribute name="originalImagePath" optional="YES" attributeType="String"/>
+        <attribute name="processedImagePath" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailImagePath" optional="YES" attributeType="String"/>
+        <relationship name="parameters" maxCount="1" deletionRule="Cascade" destinationEntity="Parameters" inverseName="dazeImage" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="Parameters" representedClassName="Parameters" syncable="YES">
+        <attribute name="blurRadius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="chromaScale" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dustOpacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dustOverlayImageName" optional="YES" attributeType="String"/>
+        <attribute name="glowOpacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="glowRadius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="glowThreshold" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="grainOpacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="grainSize" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lightLeakOpacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lightLeakOverlayName" optional="YES" attributeType="String"/>
+        <attribute name="lookupImageName" optional="YES" attributeType="String"/>
+        <attribute name="lookupIntensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vignetteIntensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vignetteOffsetX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vignetteOffsetY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="dazeImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DazeImage" inverseName="parameters" inverseEntity="DazeImage"/>
+    </entity>
+    <elements>
+        <element name="DazeImage" positionX="-535.36328125" positionY="24.40234375" width="128" height="89"/>
+        <element name="Parameters" positionX="-540.7734375" positionY="235.4375" width="128" height="284"/>
+    </elements>
+</model>

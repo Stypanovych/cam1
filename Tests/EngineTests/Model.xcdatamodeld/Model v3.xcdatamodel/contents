@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BlurFilterParameters" representedClassName="BlurFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="radius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="blur" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="ChromaFilterParameters" representedClassName="ChromaFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="intensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="chroma" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="DazeImage" representedClassName="DazeImage" syncable="YES">
+        <attribute name="originalImagePath" optional="YES" attributeType="String"/>
+        <attribute name="processedImagePath" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailImagePath" optional="YES" attributeType="String"/>
+        <relationship name="parameters" maxCount="1" deletionRule="Cascade" destinationEntity="Parameters" inverseName="dazeImage" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="DustFilterParameters" representedClassName="DustFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="dust" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="FilterParameters" representedClassName="FilterParameters" syncable="YES"/>
+    <entity name="GlowFilterParameters" representedClassName="GlowFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="radius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="threshold" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="glow" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="GrainFilterParameters" representedClassName="GrainFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="grain" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="LightLeakFilterParameters" representedClassName="LightLeakFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="lightLeak" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="LookupFilterParameters" representedClassName="LookupFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="intensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="container" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameters" inverseName="lookup" inverseEntity="Parameters"/>
+    </entity>
+    <entity name="Parameters" representedClassName="Parameters" syncable="YES">
+        <relationship name="blur" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BlurFilterParameters" inverseName="container" inverseEntity="BlurFilterParameters"/>
+        <relationship name="chroma" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChromaFilterParameters" inverseName="container" inverseEntity="ChromaFilterParameters"/>
+        <relationship name="dazeImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DazeImage" inverseName="parameters" inverseEntity="DazeImage"/>
+        <relationship name="dust" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DustFilterParameters" inverseName="container" inverseEntity="DustFilterParameters"/>
+        <relationship name="glow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GlowFilterParameters" inverseName="container" inverseEntity="GlowFilterParameters"/>
+        <relationship name="grain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GrainFilterParameters" inverseName="container" inverseEntity="GrainFilterParameters"/>
+        <relationship name="lightLeak" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LightLeakFilterParameters" inverseName="container" inverseEntity="LightLeakFilterParameters"/>
+        <relationship name="lookup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LookupFilterParameters" inverseName="container" inverseEntity="LookupFilterParameters"/>
+    </entity>
+    <elements>
+        <element name="BlurFilterParameters" positionX="-312.125" positionY="578.83203125" width="128" height="59"/>
+        <element name="ChromaFilterParameters" positionX="-460.25" positionY="577.27734375" width="128" height="59"/>
+        <element name="DazeImage" positionX="-535.36328125" positionY="24.40234375" width="128" height="89"/>
+        <element name="DustFilterParameters" positionX="-156.37109375" positionY="564.7578125" width="128" height="74"/>
+        <element name="FilterParameters" positionX="-505.828125" positionY="753.98046875" width="128" height="29"/>
+        <element name="GlowFilterParameters" positionX="2.04296875" positionY="569.78125" width="128" height="89"/>
+        <element name="GrainFilterParameters" positionX="-789.53125" positionY="562.2734375" width="128" height="74"/>
+        <element name="LightLeakFilterParameters" positionX="-931.28515625" positionY="566.87890625" width="128" height="74"/>
+        <element name="LookupFilterParameters" positionX="-639.94140625" positionY="572.6953125" width="128" height="59"/>
+        <element name="Parameters" positionX="-540.7734375" positionY="235.4375" width="128" height="149"/>
+    </elements>
+</model>

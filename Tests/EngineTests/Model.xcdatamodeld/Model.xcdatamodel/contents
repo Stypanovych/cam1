@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ChromaFilterParameters" representedClassName="ChromaFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="intensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DazeImage" representedClassName="DazeImage" syncable="YES">
+        <attribute name="originalImagePath" optional="YES" attributeType="String"/>
+        <attribute name="processedImagePath" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailImagePath" optional="YES" attributeType="String"/>
+        <relationship name="filtersParameters" toMany="YES" deletionRule="Cascade" destinationEntity="FilterParameters" inverseName="dazeImage" inverseEntity="FilterParameters"/>
+    </entity>
+    <entity name="DustFilterParameters" representedClassName="DustFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="FilterParameters" representedClassName="FilterParameters" syncable="YES">
+        <relationship name="dazeImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DazeImage" inverseName="filtersParameters" inverseEntity="DazeImage"/>
+    </entity>
+    <entity name="GlowFilterParameters" representedClassName="GlowFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="radius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="threshold" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="GrainFilterParameters" representedClassName="GrainFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="LightLeakFilterParameters" representedClassName="LightLeakFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="opacity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="LookupFilterParameters" representedClassName="LookupFilterParameters" parentEntity="FilterParameters" syncable="YES">
+        <attribute name="intensity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="ChromaFilterParameters" positionX="-144" positionY="90" width="128" height="44"/>
+        <element name="DazeImage" positionX="-419.95703125" positionY="-35.9609375" width="128" height="89"/>
+        <element name="DustFilterParameters" positionX="-162" positionY="72" width="128" height="59"/>
+        <element name="FilterParameters" positionX="-78.4921875" positionY="9" width="128" height="44"/>
+        <element name="GlowFilterParameters" positionX="-29.79296875" positionY="134.015625" width="128" height="74"/>
+        <element name="GrainFilterParameters" positionX="-153" positionY="81" width="128" height="59"/>
+        <element name="LightLeakFilterParameters" positionX="116.5546875" positionY="140.9296875" width="128" height="59"/>
+        <element name="LookupFilterParameters" positionX="-171" positionY="143.8125" width="128" height="44"/>
+    </elements>
+</model>

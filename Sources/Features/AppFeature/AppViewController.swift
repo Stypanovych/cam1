@@ -44,7 +44,7 @@ import EditFeature
 //  }
 //}
 
-class AppViewController: ScrollViewController {
+public class AppViewController: ScrollViewController {
   private let store: App.Store
   private let viewStore: App.ViewStore
   
